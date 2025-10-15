@@ -1,6 +1,6 @@
 from flask import Flask
 
-from tarefa import buscar_tarefas
+from tarefa import buscar_tarefas, buscar_tarefa
 
 app = Flask(__name__)
 
@@ -9,6 +9,11 @@ def index():
     return{
         'message' : 'Api rodando'
     }
+
+@app.route('/api/tarefa', methods=['GET'])
+def get_tarefa():
+    tarefa= buscar_tarefa()
+    return tarefas
 
 @app.route('/api/tarefas', methods=['GET'])
 def get_tarefas():
