@@ -13,7 +13,7 @@ def index():
 @app.route('/api/tarefa', methods=['GET'])
 def get_tarefa():
     tarefa= buscar_tarefa()
-    return tarefas
+    return tarefa
 
 @app.route('/api/tarefas', methods=['GET'])
 def get_tarefas():
